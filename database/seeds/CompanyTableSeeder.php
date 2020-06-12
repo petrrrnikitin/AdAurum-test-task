@@ -1,6 +1,7 @@
 <?php
 
 use App\Company;
+use App\User;
 use Illuminate\Database\Seeder;
 
 class CompanyTableSeeder extends Seeder

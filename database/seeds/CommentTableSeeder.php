@@ -20,7 +20,7 @@ class CommentTableSeeder extends Seeder
                 'company_id' => $company->id,
             ]);
             $comments = collect([$comment]);
-            for ($i = 0; $i < random_int(3,10); $i++) {
+            for ($i = 0; $i < random_int(10,15); $i++) {
                 $newComment = factory(Comment::class)->make();
                 $user_id = User::find(random_int(1,User::all()->count()))->id;
                 $newComment = Comment::make([
@@ -33,7 +33,7 @@ class CommentTableSeeder extends Seeder
                 $comments->push($newComment);
 
             }
-            $company->comments()->saveMany($comments);
+            $company->comment()->saveMany($comments);
         });
     }
 

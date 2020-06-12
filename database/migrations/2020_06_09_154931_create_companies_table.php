@@ -22,6 +22,9 @@ class CreateCompaniesTable extends Migration
             $table->string('address');
             $table->string('phone');
             $table->timestamps();
+
+            $table->unsignedBigInteger('user_id')->index();
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
