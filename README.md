@@ -20,7 +20,7 @@ Requirements - https://laravel.com/docs/7.x/installation#server-requirements
      npm install
       
      ```
-  * Компилируем файлы на всякий случай зависимости
+  * Компилируем файлы на всякий случай
       ```bash
       npm run dev
        
