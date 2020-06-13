@@ -2279,10 +2279,8 @@ __webpack_require__.r(__webpack_exports__);
     })["catch"](function (error) {
       return console.log(error);
     });
-    axios.get("/api/comments").then(function (res) {
-      _this.comments = res.data.data.filter(function (item) {
-        return item.company_id === +_this.$route.params.id;
-      });
+    axios.get("/api/comments?company_id=".concat(this.$route.params.id)).then(function (res) {
+      _this.comments = res.data.data;
       _this.loading = true;
     })["catch"](function (error) {
       return console.log(error);

@@ -25,9 +25,9 @@
                     this.company = res.data;
                 })
                 .catch(error => console.log(error))
-            axios.get(`/api/comments`)
+            axios.get(`/api/comments?company_id=${this.$route.params.id}`)
                 .then(res => {
-                    this.comments = res.data.data.filter(item => item.company_id === +this.$route.params.id);
+                    this.comments = res.data.data;
                     this.loading = true
                 })
                 .catch(error => console.log(error))

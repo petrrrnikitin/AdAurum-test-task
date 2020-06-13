@@ -12,7 +12,9 @@ class CommentController extends Controller
 {
     public function index() {
         $this->authorize('viewAny', Comment::class);
-        return CommentResource::collection(request()->user()->comment);
+        $company_id = request('company_id');
+        $comments = request()->user()->comment->where('company_id', $company_id);
+        return CommentResource::collection($comments);
     }
     public function store()
     {
